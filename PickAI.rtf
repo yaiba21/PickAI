@@ -1,0 +1,468 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="vi">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Ph\'e2n T\'edch Ng\uc0\u432 \u7901 i D\'f9ng & N\u7873 n T\u7843 ng Pick AI</title>\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>\
+    <link rel="preconnect" href="https://fonts.googleapis.com">\
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">\
+    <style>\
+        body \{\
+            font-family: 'Inter', sans-serif;\
+            background-color: #f8fafc;\
+        \}\
+        .chart-container \{\
+            position: relative;\
+            width: 100%;\
+            max-width: 700px;\
+            margin-left: auto;\
+            margin-right: auto;\
+            height: 300px;\
+            max-height: 500px;\
+        \}\
+        @media (min-width: 768px) \{\
+            .chart-container \{\
+                height: 500px;\
+            \}\
+        \}\
+        .journey-step \{\
+            position: relative;\
+            display: flex;\
+            flex-direction: column;\
+            align-items: center;\
+            text-align: center;\
+            flex: 1;\
+        \}\
+        .journey-line \{\
+            position: absolute;\
+            height: 2px;\
+            top: 50%;\
+            left: 50%;\
+            transform: translateY(-50%);\
+            width: calc(100% - 2rem);\
+            background-color: #CBD5E1;\
+            z-index: 0;\
+        \}\
+    </style>\
+</head>\
+<body class="text-[#2F4858]">\
+    <div class="container mx-auto p-4 sm:p-8">\
+        <header class="text-center mb-12">\
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#00A6FB] mb-4">Pick AI - N\uc0\u7873 n T\u7843 ng Ph\'e2n T\'edch & Hu\u7845 n Luy\u7879 n Pickleball</h1>\
+            <p class="max-w-4xl mx-auto text-lg md:text-xl text-gray-600">\
+                Pickleball \uc0\u273 ang ph\'e1t tri\u7875 n nhanh t\u7841 i Vi\u7879 t Nam, v\u7899 i nhi\u7873 u ki\u7875 u ng\u432 \u7901 i ch\u417 i: casual, phong tr\'e0o, hu\u7845 n luy\u7879 n vi\'ean, v\'e0 CLB. M\u7895 i nh\'f3m c\'f3 h\'e0nh vi, pain points v\'e0 k\u7923  v\u7885 ng kh\'e1c nhau. N\u7871 u kh\'f4ng ph\'e2n kh\'fac r\'f5, s\u7843 n ph\u7849 m s\u7869  kh\'f3 user-centric. Pick AI gi\u7843 i quy\u7871 t v\u7845 n \u273 \u7873  b\u7857 ng c\'e1ch ph\u7909 c v\u7909  4 nh\'f3m user ch\'ednh, v\u7899 i CLB & c\u7897 ng \u273 \u7891 ng \u273 \u432 \u7907 c xem l\'e0 giai \u273 o\u7841 n ph\'e1t tri\u7875 n sau.\
+            </p>\
+        </header>\
+\
+        <section class="mb-16">\
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-[#00A6FB] mb-8">Ph\'e2n T\'edch 4 User Segment</h2>\
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">\
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col">\
+                    <div class="flex items-center mb-4">\
+                        <span class="text-5xl mr-4">\uc0\u55357 \u56842 </span>\
+                        <h3 class="text-3xl font-bold text-[#00A6FB]">Ng\uc0\u432 \u7901 i Ch\u417 i Gi\u7843 i Tr\'ed</h3>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">\uc0\u272 \u7883 nh ngh\u297 a & H\'e0nh vi</h4>\
+                        <p class="text-gray-700">Ch\uc0\u417 i 1\'962 bu\u7893 i/tu\u7847 n, th\'edch highlight \u273 \u7875  chia s\u7867  MXH.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Pain Points</h4>\
+                        <p class="text-gray-700">Kh\'f4ng c\'f3 HLV, kh\'f4ng bi\uc0\u7871 t ti\u7871 n b\u7897  th\u7871  n\'e0o.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Jobs To Be Done</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">\
+                            <li><span class="font-semibold">Functional:</span> form analytics, ph\'e2n t\'edch c\uc0\u417  b\u7843 n, highlight auto.</li>\
+                            <li><span class="font-semibold">Emotional:</span> vui v\uc0\u7867 , t\u7921  tin khi th\u7845 y c\u7843 i thi\u7879 n.</li>\
+                            <li><span class="font-semibold">Social:</span> c\'f3 highlight khoe b\uc0\u7841 n b\'e8.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">User Flow</h4>\
+                        <p class="text-gray-700 text-sm">Awareness (TikTok/Facebook/Insta) \uc0\u8594  D\'f9ng th\u7917  free \u8594  Th\u7845 y l\u7895 i c\u417  b\u7843 n \u8594  Quay \u273 \u7873 u \u8594  C\'f3 nhu c\u7847 u h\u7885 c \u8594  K\u7871 t n\u7889 i HLV \u8594  Tr\u7843  ph\'ed.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">Features</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">\
+                            <li>form analytics, highlight auto, th\uc0\u7889 ng k\'ea tu\u7847 n/th\'e1ng, chia s\u7867  MXH, AI agent g\u7907 i \'fd b\'e0i t\u7853 p, coach\'96player matching.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#F24236]">Hook</h4>\
+                        <p class="text-sm text-gray-700">Gamification + highlight viral.</p>\
+                    </div>\
+                    <div>\
+                        <h4 class="font-bold text-lg mb-2 text-[#8A2BE2]">Value Proposition</h4>\
+                        <p class="text-gray-700">D\uc0\u7877  d\'e0ng th\u7845 y ti\u7871 n b\u7897  v\'e0 c\'f3 highlight \u273 \u7865 p \u273 \u7875  chia s\u7867 .</p>\
+                    </div>\
+                </div>\
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col">\
+                    <div class="flex items-center mb-4">\
+                        <span class="text-5xl mr-4">\uc0\u55356 \u57286 </span>\
+                        <h3 class="text-3xl font-bold text-[#00A6FB]">Ng\uc0\u432 \u7901 i Ch\u417 i B\'e1n Chuy\'ean</h3>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">\uc0\u272 \u7883 nh ngh\u297 a & H\'e0nh vi</h4>\
+                        <p class="text-gray-700">Ch\uc0\u417 i 3\'964 bu\u7893 i/tu\u7847 n, tham gia gi\u7843 i.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Pain Points</h4>\
+                        <p class="text-gray-700">Thi\uc0\u7871 u d\u7919  li\u7879 u chi\u7871 n thu\u7853 t, kh\'f3 t\'ecm HLV gi\u7887 i.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Jobs To Be Done</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">\
+                            <li><span class="font-semibold">Functional:</span> rally analysis, shot classification, heatmap, k\uc0\u7871 t n\u7889 i HLV.</li>\
+                            <li><span class="font-semibold">Emotional:</span> t\uc0\u7921  tin tr\u432 \u7899 c gi\u7843 i, t\u7853 p \u273 \'fang tr\u7885 ng t\'e2m.</li>\
+                            <li><span class="font-semibold">Social:</span> \uc0\u273 \u432 \u7907 c c\'f4ng nh\u7853 n \u7903  CLB, so s\'e1nh v\u7899 i \u273 \u7889 i th\u7911 .</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">User Flow</h4>\
+                        <p class="text-gray-700 text-sm">Awareness (TikTok/Facebook/Insta) \uc0\u8594  Quay 1 tr\u7853 n gi\u7843 i \u8594  Ph\'e1t hi\u7879 n \u273 i\u7875 m y\u7871 u \u8594  AI agent g\u7907 i \'fd HLV \u8594  Luy\u7879 n t\u7853 p theo gi\'e1o tr\'ecnh \u8594  Mua premium.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">Features</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">\
+                            <li>rally analysis, shot classification, heatmap, coach rating & review, coach\'96player matching, gi\'e1o tr\'ecnh c\'e1 nh\'e2n h\'f3a, AI agent t\uc0\u432  v\u7845 n.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#F24236]">Hook</h4>\
+                        <p class="text-sm text-gray-700">leaderboard + coach marketplace.</p>\
+                    </div>\
+                    <div>\
+                        <h4 class="font-bold text-lg mb-2 text-[#8A2BE2]">Value Proposition</h4>\
+                        <p class="text-gray-700">Bi\uc0\u7871 n d\u7919  li\u7879 u tr\u7853 n \u273 \u7845 u th\'e0nh l\u7907 i th\u7871  thi \u273 \u7845 u v\'e0 t\'ecm HLV nhanh ch\'f3ng.</p>\
+                    </div>\
+                </div>\
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col">\
+                    <div class="flex items-center mb-4">\
+                        <span class="text-5xl mr-4">\uc0\u55358 \u56785 \u8205 \u55356 \u57323 </span>\
+                        <h3 class="text-3xl font-bold text-[#00A6FB]">Hu\uc0\u7845 n Luy\u7879 n Vi\'ean</h3>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">\uc0\u272 \u7883 nh ngh\u297 a & H\'e0nh vi</h4>\
+                        <p class="text-gray-700">D\uc0\u7841 y 5\'9620 h\u7885 c vi\'ean, mu\u7889 n t\u259 ng uy t\'edn & hi\u7879 u qu\u7843 .</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Pain Points</h4>\
+                        <p class="text-gray-700">Kh\'f3 ch\uc0\u7913 ng minh hi\u7879 u qu\u7843 , thi\u7871 u c\'f4ng c\u7909  qu\u7843 n l\'fd l\u7899 p.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Jobs To Be Done</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">\
+                            <li><span class="font-semibold">Functional:</span> dashboard \uc0\u273 a h\u7885 c vi\'ean, qu\u7843 n l\'fd gi\'e1o tr\'ecnh, lesson plan AI agent.</li>\
+                            <li><span class="font-semibold">Emotional:</span> c\uc0\u7843 m th\u7845 y chuy\'ean nghi\u7879 p.</li>\
+                            <li><span class="font-semibold">Social:</span> \uc0\u273 \u432 \u7907 c c\'f4ng nh\u7853 n l\'e0 HLV hi\u7879 n \u273 \u7841 i.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">User Flow</h4>\
+                        <p class="text-gray-700 text-sm">Awareness (TikTok/Facebook/Insta) \uc0\u8594  Test v\u7899 i h\u7885 c vi\'ean \u8594  \u272 \u432 \u7907 c review t\u7889 t \u8594  C\'f3 h\u7885 c vi\'ean m\u7899 i \u8594  D\'f9ng coaching tools & gi\'e1o tr\'ecnh \u8594  N\'e2ng c\u7845 p Pro.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">Features</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">\
+                            <li>multi-student dashboard, tagging video, drill library, coaching note/tracker, coach rating, AI agent h\uc0\u7895  tr\u7907  lesson plan.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#F24236]">Hook</h4>\
+                        <p class="text-sm text-gray-700">review t\uc0\u7915  h\u7885 c vi\'ean + lesson plan c\'e1 nh\'e2n h\'f3a.</p>\
+                    </div>\
+                    <div>\
+                        <h4 class="font-bold text-lg mb-2 text-[#8A2BE2]">Value Proposition</h4>\
+                        <p class="text-gray-700">Trao cho HLV c\'f4ng c\uc0\u7909  to\'e0n di\u7879 n \u273 \u7875  d\u7841 y hi\u7879 u qu\u7843 , t\u259 ng uy t\'edn v\'e0 thu h\'fat th\'eam h\u7885 c vi\'ean.</p>\
+                    </div>\
+                </div>\
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col">\
+                    <div class="flex items-center mb-4">\
+                        <span class="text-5xl mr-4">\uc0\u55358 \u56605 </span>\
+                        <h3 class="text-3xl font-bold text-[#00A6FB]">CLB & C\uc0\u7897 ng \u272 \u7891 ng</h3>\
+                    </div>\
+                    <div class="mb-4">\
+                        <p class="text-gray-700 font-semibold italic">L\uc0\u432 u \'fd: nh\'f3m n\'e0y s\u7869  \u273 \u432 \u7907 c ph\'e1t tri\u7875 n \u7903  giai \u273 o\u7841 n sau.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">\uc0\u272 \u7883 nh ngh\u297 a & H\'e0nh vi</h4>\
+                        <p class="text-gray-700">CLB 50\'96200 h\uc0\u7897 i vi\'ean, t\u7893  ch\u7913 c gi\u7843 i, c\u7847 n viral content.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Pain Points</h4>\
+                        <p class="text-gray-700">Kh\'f3 qu\uc0\u7843 n l\'fd nhi\u7873 u s\'e2n, kh\'f3 ch\u7885 n HLV uy t\'edn.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#3DDC97]">Jobs To Be Done</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">\
+                            <li><span class="font-semibold">Functional:</span> leaderboard, multi-court tracking, qu\uc0\u7843 n l\'fd gi\u7843 i, coach marketplace.</li>\
+                            <li><span class="font-semibold">Emotional:</span> CLB t\uc0\u7921  h\'e0o, h\u7897 i vi\'ean g\u7855 n k\u7871 t.</li>\
+                            <li><span class="font-semibold">Social:</span> th\uc0\u432 \u417 ng hi\u7879 u m\u7841 nh, thu h\'fat th\'eam h\u7897 i vi\'ean.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">User Flow</h4>\
+                        <p class="text-gray-700 text-sm">Demo CLB kh\'e1c \uc0\u8594  Free trial \u8594  Highlight viral \u8594  H\u7897 i vi\'ean d\'f9ng \u8594  Mua Enterprise.</p>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#00A6FB]">Features</h4>\
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">\
+                            <li>ranking h\uc0\u7897 i vi\'ean, multi-court tracking, highlight CLB, qu\u7843 n l\'fd gi\u7843 i \u273 \u7845 u, coach marketplace.</li>\
+                        </ul>\
+                    </div>\
+                    <div class="mb-4">\
+                        <h4 class="font-bold text-lg mb-2 text-[#F24236]">Hook</h4>\
+                        <p class="text-sm text-gray-700">CLB = hub cho c\uc0\u7843  ch\u417 i & hu\u7845 n luy\u7879 n.</p>\
+                    </div>\
+                    <div>\
+                        <h4 class="font-bold text-lg mb-2 text-[#8A2BE2]">Value Proposition</h4>\
+                        <p class="text-gray-700">Gi\'fap CLB n\'e2ng gi\'e1 tr\uc0\u7883  h\u7897 i vi\'ean, c\'f3 th\'eam c\'f4ng c\u7909  qu\u7843 n l\'fd v\'e0 n\u7897 i dung truy\u7873 n th\'f4ng h\u7845 p d\u7851 n.</p>\
+                    </div>\
+                </div>\
+            </div>\
+        </section>\
+\
+        <section class="mb-16">\
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-[#00A6FB] mb-8">B\uc0\u7843 n \u272 \u7891  T\'ednh N\u259 ng (Feature Map)</h2>\
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div class="flex flex-col">\
+                        <h4 class="font-bold text-xl p-2 rounded-t-lg text-white bg-[#00A6FB] text-center">Video Analysis</h4>\
+                        <ul class="list-none p-4 bg-gray-50 rounded-b-lg flex-grow">\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Rally Detection</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Shot Classification</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> Heatmap</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Highlight Auto</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> Progress Tracker</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Form Analytics</li>\
+                            <li class="mb-1"><span class="font-bold text-[#F24236]">\uc0\u10134 </span> Multi-court</li>\
+                        </ul>\
+                    </div>\
+                    <div class="flex flex-col">\
+                        <h4 class="font-bold text-xl p-2 rounded-t-lg text-white bg-[#3DDC97] text-center">Coaching Tools</h4>\
+                        <ul class="list-none p-4 bg-gray-50 rounded-b-lg flex-grow">\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Dashboard \u272 a H\u7885 c Vi\'ean</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Tag L\u7895 i Video</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> Gi\'e1o Tr\'ecnh & Drill Library</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> Coaching Note & Tracker</li>\
+                            <li class="mb-1"><span class="font-bold text-[#F24236]">\uc0\u10134 </span> B\'e1o C\'e1o PDF</li>\
+                        </ul>\
+                    </div>\
+                    <div class="flex flex-col">\
+                        <h4 class="font-bold text-xl p-2 rounded-t-lg text-white bg-[#F9C80E] text-center">Coach\'96Player Connection</h4>\
+                        <ul class="list-none p-4 bg-gray-50 rounded-b-lg flex-grow">\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Coach Rating & Review</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Coach\'96Player Matching</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> Booking & Scheduling</li>\
+                            <li class="mb-1"><span class="font-bold text-[#F24236]">\uc0\u10134 </span> Coach Marketplace</li>\
+                        </ul>\
+                    </div>\
+                    <div class="flex flex-col">\
+                        <h4 class="font-bold text-xl p-2 rounded-t-lg text-white bg-[#8A2BE2] text-center">AI Agent Support</h4>\
+                        <ul class="list-none p-4 bg-gray-50 rounded-b-lg flex-grow">\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Tr\'f2 Chuy\u7879 n Hi\u7875 u Nhu C\u7847 u</li>\
+                            <li class="mb-1"><span class="font-bold text-[#3DDC97]">\uc0\u9989 </span> G\u7907 i \'dd B\'e0i T\u7853 p</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> Lesson Plan H\u7895  Tr\u7907  Coach</li>\
+                            <li class="mb-1"><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> K\u7871 t N\u7889 i Coach Ph\'f9 H\u7907 p</li>\
+                            <li class="mb-1"><span class="font-bold text-[#F24236]">\uc0\u10134 </span> Qu\u7843 n L\'fd Gi\u7843 i</li>\
+                        </ul>\
+                    </div>\
+                </div>\
+                <div class="mt-8 text-center text-sm text-gray-600">\
+                    <p class="font-bold">K\'fd hi\uc0\u7879 u:</p>\
+                    <p><span class="font-bold text-[#00A6FB]">\uc0\u11088 </span> High (c\u7889 t l\'f5i), <span class="font-bold text-[#3DDC97]">\u9989 </span> Medium (quan tr\u7885 ng), <span class="font-bold text-[#F24236]">\u10134 </span> Low (nice-to-have).</p>\
+                </div>\
+            </div>\
+        </section>\
+\
+        <section class="mb-16">\
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-[#00A6FB] mb-8">H\'e0nh Tr\'ecnh Ng\uc0\u432 \u7901 i D\'f9ng (User Journey Map)</h2>\
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 relative">\
+                <div class="flex flex-col md:flex-row justify-between items-stretch">\
+                    <div class="journey-step mb-12 md:mb-0">\
+                        <div class="relative w-16 h-16 bg-[#F24236] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">1</div>\
+                        <h4 class="font-bold text-xl text-[#F24236]">Awareness</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">Ng\uc0\u432 \u7901 i d\'f9ng ph\'e1t hi\u7879 n app qua k\'eanh viral nh\u432  TikTok/Facebook/Insta.</p>\
+                    </div>\
+                    <div class="flex-grow flex items-center justify-center md:mx-4">\
+                        <div class="hidden md:block w-full h-1 bg-gray-300"></div>\
+                        <div class="md:hidden w-1 h-24 bg-gray-300"></div>\
+                    </div>\
+                    <div class="journey-step mb-12 md:mb-0">\
+                        <div class="relative w-16 h-16 bg-[#00A6FB] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">2</div>\
+                        <h4 class="font-bold text-xl text-[#00A6FB]">Trial</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">T\uc0\u7843 i app v\'e0 d\'f9ng th\u7917  mi\u7877 n ph\'ed t\'ednh n\u259 ng ph\'e2n t\'edch video cho m\u7897 t tr\u7853 n \u273 \u7845 u.</p>\
+                    </div>\
+                    <div class="flex-grow flex items-center justify-center md:mx-4">\
+                        <div class="hidden md:block w-full h-1 bg-gray-300"></div>\
+                        <div class="md:hidden w-1 h-24 bg-gray-300"></div>\
+                    </div>\
+                    <div class="journey-step mb-12 md:mb-0">\
+                        <div class="relative w-16 h-16 bg-[#3DDC97] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">3</div>\
+                        <h4 class="font-bold text-xl text-[#3DDC97]">First Success</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">Ng\uc0\u432 \u7901 i d\'f9ng nh\u7853 n th\u7845 y c\'e1c l\u7895 i c\u417  b\u7843 n trong c\'fa \u273 \'e1nh v\'e0 th\u7845 y insight r\'f5.</p>\
+                    </div>\
+                    <div class="flex-grow flex items-center justify-center md:mx-4">\
+                        <div class="hidden md:block w-full h-1 bg-gray-300"></div>\
+                        <div class="md:hidden w-1 h-24 bg-gray-300"></div>\
+                    </div>\
+                    <div class="journey-step mb-12 md:mb-0">\
+                        <div class="relative w-16 h-16 bg-[#F9C80E] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">4</div>\
+                        <h4 class="font-bold text-xl text-[#F9C80E]">Engagement</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">AI agent g\uc0\u7907 i \'fd luy\u7879 n t\u7853 p ho\u7863 c k\u7871 t n\u7889 i v\u7899 i HLV.</p>\
+                    </div>\
+                    <div class="flex-grow flex items-center justify-center md:mx-4">\
+                        <div class="hidden md:block w-full h-1 bg-gray-300"></div>\
+                        <div class="md:hidden w-1 h-24 bg-gray-300"></div>\
+                    </div>\
+                    <div class="journey-step mb-12 md:mb-0">\
+                        <div class="relative w-16 h-16 bg-[#8A2BE2] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">5</div>\
+                        <h4 class="font-bold text-xl text-[#8A2BE2]">Retention</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">D\'f9ng app \uc0\u273 \u7873 u \u273 \u7863 n h\'e0ng tu\u7847 n, h\u7885 c v\u7899 i HLV \u273 \u7875  ti\u7871 p t\u7909 c n\'e2ng tr\'ecnh.</p>\
+                    </div>\
+                    <div class="flex-grow flex items-center justify-center md:mx-4">\
+                        <div class="hidden md:block w-full h-1 bg-gray-300"></div>\
+                        <div class="md:hidden w-1 h-24 bg-gray-300"></div>\
+                    </div>\
+                    <div class="journey-step">\
+                        <div class="relative w-16 h-16 bg-[#3DDC97] rounded-full flex items-center justify-center text-white text-3xl font-bold p-2 mb-2">6</div>\
+                        <h4 class="font-bold text-xl text-[#3DDC97]">Paid Upgrade</h4>\
+                        <p class="text-sm text-gray-500 max-w-xs mt-2">N\'e2ng c\uc0\u7845 p g\'f3i premium/Pro \u273 \u7875  truy c\u7853 p c\'e1c t\'ednh n\u259 ng chuy\'ean s\'e2u v\'e0 kh\'f4ng gi\u7899 i h\u7841 n.</p>\
+                    </div>\
+                </div>\
+            </div>\
+        </section>\
+\
+        <section class="mb-16">\
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-[#00A6FB] mb-8">B\uc0\u7913 c Tranh T\u7893 ng Quan V\u7873  Nhu C\u7847 u</h2>\
+            <p class="text-center mt-2 max-w-2xl mx-auto text-lg text-gray-600">Bi\uc0\u7875 u \u273 \u7891  radar tr\u7921 c quan h\'f3a m\u7913 c \u273 \u7897  quan t\'e2m c\u7911 a m\u7895 i ph\'e2n kh\'fac \u273 \u7889 i v\u7899 i c\'e1c nh\'f3m t\'ednh n\u259 ng c\u7889 t l\'f5i, gi\'fap \u273 \u7883 nh h\u432 \u7899 ng ph\'e1t tri\u7875 n s\u7843 n ph\u7849 m m\u7897 t c\'e1ch hi\u7879 u qu\u7843 .</p>\
+            <div class="chart-container">\
+                <canvas id="userNeedsChart"></canvas>\
+            </div>\
+        </section>\
+\
+        <footer class="text-center py-8">\
+            <p class="max-w-3xl mx-auto text-xl md:text-2xl font-bold text-gray-700">\
+                Pick AI l\'e0 n\uc0\u7873 n t\u7843 ng all-in-one: form analytics, video analysis, coaching tools, coach\'96player connection, AI personalization. Gi\u7843 i quy\u7871 t nhu c\u7847 u to\'e0n b\u7897  h\'e0nh tr\'ecnh t\u7915  ng\u432 \u7901 i ch\u417 i casual \u273 \u7871 n v\u7853 n \u273 \u7897 ng vi\'ean v\'e0 HLV, v\'e0 s\u7869  m\u7903  r\u7897 ng d\u7847 n \u273 \u7871 n CLB & c\u7897 ng \u273 \u7891 ng.\
+            </p>\
+        </footer>\
+    </div>\
+    <script>\
+        const ctx = document.getElementById('userNeedsChart').getContext('2d');\
+        const userNeedsChart = new Chart(ctx, \{\
+            type: 'radar',\
+            data: \{\
+                labels: [\
+                    'Ph\'e2n T\'edch Video',\
+                    'C\'f4ng C\uc0\u7909  Hu\u7845 n Luy\u7879 n',\
+                    'K\uc0\u7871 t N\u7889 i HLV-H\u7885 c Vi\'ean',\
+                    'H\uc0\u7895  Tr\u7907  AI'\
+                ],\
+                datasets: [\{\
+                    label: 'Ng\uc0\u432 \u7901 i Ch\u417 i Gi\u7843 i Tr\'ed',\
+                    data: [5, 3, 4, 5],\
+                    backgroundColor: 'rgba(61, 220, 151, 0.2)',\
+                    borderColor: 'rgba(61, 220, 151, 1)',\
+                    pointBackgroundColor: 'rgba(61, 220, 151, 1)',\
+                    pointBorderColor: '#fff',\
+                    pointHoverBackgroundColor: '#fff',\
+                    pointHoverBorderColor: 'rgba(61, 220, 151, 1)',\
+                    borderWidth: 2\
+                \}, \{\
+                    label: 'Ng\uc0\u432 \u7901 i Ch\u417 i B\'e1n Chuy\'ean',\
+                    data: [5, 3, 5, 5],\
+                    backgroundColor: 'rgba(0, 166, 251, 0.2)',\
+                    borderColor: 'rgba(0, 166, 251, 1)',\
+                    pointBackgroundColor: 'rgba(0, 166, 251, 1)',\
+                    pointBorderColor: '#fff',\
+                    pointHoverBackgroundColor: '#fff',\
+                    pointHoverBorderColor: 'rgba(0, 166, 251, 1)',\
+                    borderWidth: 2\
+                \}, \{\
+                    label: 'Hu\uc0\u7845 n Luy\u7879 n Vi\'ean',\
+                    data: [4, 5, 5, 5],\
+                    backgroundColor: 'rgba(249, 200, 14, 0.2)',\
+                    borderColor: 'rgba(249, 200, 14, 1)',\
+                    pointBackgroundColor: 'rgba(249, 200, 14, 1)',\
+                    pointBorderColor: '#fff',\
+                    pointHoverBackgroundColor: '#fff',\
+                    pointHoverBorderColor: 'rgba(249, 200, 14, 1)',\
+                    borderWidth: 2\
+                \}, \{\
+                    label: 'CLB & C\uc0\u7897 ng \u272 \u7891 ng',\
+                    data: [3, 4, 5, 5],\
+                    backgroundColor: 'rgba(242, 66, 54, 0.2)',\
+                    borderColor: 'rgba(242, 66, 54, 1)',\
+                    pointBackgroundColor: 'rgba(242, 66, 54, 1)',\
+                    pointBorderColor: '#fff',\
+                    pointHoverBackgroundColor: '#fff',\
+                    pointHoverBorderColor: 'rgba(242, 66, 54, 1)',\
+                    borderWidth: 2\
+                \}]\
+            \},\
+            options: \{\
+                responsive: true,\
+                maintainAspectRatio: false,\
+                scales: \{\
+                    r: \{\
+                        angleLines: \{\
+                            color: 'rgba(0, 0, 0, 0.1)'\
+                        \},\
+                        grid: \{\
+                            color: 'rgba(0, 0, 0, 0.1)'\
+                        \},\
+                        pointLabels: \{\
+                            font: \{\
+                                size: 12,\
+                                weight: 'bold'\
+                            \},\
+                            color: '#2F4858'\
+                        \},\
+                        ticks: \{\
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',\
+                            stepSize: 1\
+                        \},\
+                        suggestedMin: 0,\
+                        suggestedMax: 5\
+                    \}\
+                \},\
+                plugins: \{\
+                    legend: \{\
+                        position: 'top',\
+                        labels: \{\
+                           font: \{\
+                                size: 14\
+                           \}\
+                        \}\
+                    \},\
+                    tooltip: \{\
+                        callbacks: \{\
+                            title: function(tooltipItems) \{\
+                                const item = tooltipItems[0];\
+                                let label = item.chart.data.labels[item.dataIndex];\
+                                if (Array.isArray(label)) \{\
+                                  return label.join(' ');\
+                                \} else \{\
+                                  return label;\
+                                \}\
+                            \}\
+                        \}\
+                    \}\
+                \}\
+            \}\
+        \});\
+    </script>\
+</body>\
+</html>\
+}
